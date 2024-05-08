@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.10.8/sweetalert2.min.css" integrity="sha512-OWGg8FcHstyYFwtjfkiCoYHW2hG3PDWwdtczPAPUcETobBJOVCouKig8rqED0NMLcT9GtE4jw6IT1CSrwY87uw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+      }
+
+      .recordingCard {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+        border-radius: 10px;
+        height: 150px;
+        width: 400px;
+        padding: 15px 10px;
+      }
+      .recordingCard .startRecordingContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        font-size: 22px;
+        font-weight: bold;
+        color: white;
+      }
+      .recordingCard .startRecordingContainer img {
+        width: 100px;
+        height: 100px;
+        cursor: pointer;
+        padding: 5px;
+      }
+      .recordingCard .startRecordingContainer img:hover {
+        border: 1px solid white;
+        border-radius: 50%;
+      }
+      .recordingCard .recordingInfoContainer {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+      }
+      .recordingCard .recordingInfoContainer #durationElement {
+        font-size: 24px;
+        font-weight: bold;
+        color: #2D4A60;
+      }
+      .recordingCard .recordingInfoContainer .recordingActionContainer {
+        display: flex;
+        align-items: center;
+      }
+      .recordingCard .recordingInfoContainer .recordingActionContainer img {
+        width: 60px;
+        height: 60px;
+        cursor: pointer;
+        padding: 5px;
+      }
+      .recordingCard .recordingInfoContainer .recordingActionContainer img:not(:first-child){
+        height: 55px;
+        cursor: pointer;
+      }
+      .recordingCard canvas {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="recordingCard">
+      <div class="startRecordingContainer">
+        <img src="/image/rec.png" alt="recording" id="startRecord" />
+      </div>
+      <div class="recordingInfoContainer">
+        <p id="durationElement">00:00:00</p>
+        <div class="recordingActionContainer">
+          <img src="/image/pause.png" id="pauseRecord" alt="pause" />
+          <img src="/image/refresh.png" alt="restart" id="restart">
+          <img src="/image/stop.png" id="stopRecord" alt="stop">
+        </div>
+      </div>
+      <canvas id="visualizer" width="350" height="80"></canvas>
+    </div>
+    <script src="./index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.10.8/sweetalert2.min.js" integrity="sha512-FbWDiO6LEOsPMMxeEvwrJPNzc0cinzzC0cB/+I2NFlfBPFlZJ3JHSYJBtdK7PhMn0VQlCY1qxflEG+rplMwGUg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lamejs/1.2.0/lame.min.js"></script>
+   
+  </body>
+</html>
